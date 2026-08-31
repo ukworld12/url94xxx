@@ -1,0 +1,543 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --danger: #dc2626;
+  --danger-dark: #b91c1c;
+  --success: #16a34a;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+.screen {
+  min-height: 100vh;
+}
+
+#loginScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card);
+  padding: 32px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.login-card h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  margin-bottom: 14px;
+}
+
+.login-card input:focus {
+  border-color: var(--primary);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+.login-card button:hover {
+  background: var(--primary-dark);
+}
+
+
+/* =========================
+   ERROR / MESSAGE
+========================= */
+
+.error {
+  color: var(--danger);
+  text-align: center;
+  margin-top: 12px;
+  min-height: 20px;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.message.success {
+  color: var(--success);
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+  background: #111827;
+  color: white;
+  padding: 18px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar h1 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.topbar p {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.logout-btn {
+  border: 1px solid #374151;
+  background: transparent;
+  color: white;
+  padding: 9px 15px;
+  border-radius: 8px;
+}
+
+.logout-btn:hover {
+  background: #374151;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 25px 18px 50px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.stat-card strong {
+  font-size: 30px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+  background: var(--card);
+  border-radius: 15px;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  margin-top: 15px;
+}
+
+label small {
+  color: var(--muted);
+  font-weight: normal;
+}
+
+input[type="url"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  background: white;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+form > button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  border: none;
+  border-radius: 9px;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+form > button:hover {
+  background: var(--primary-dark);
+}
+
+
+/* =========================
+   URL LIST HEADER
+========================= */
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.list-header h2 {
+  margin-bottom: 0;
+}
+
+.danger-btn {
+  border: none;
+  background: #fee2e2;
+  color: var(--danger);
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.danger-btn:hover {
+  background: #fecaca;
+}
+
+
+/* =========================
+   URL ITEMS
+========================= */
+
+.url-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.url-item {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 15px;
+  background: #fafafa;
+}
+
+.url-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.short-url {
+  color: var(--primary);
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.original-url {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+  word-break: break-all;
+}
+
+.url-date {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.url-actions {
+  display: flex;
+  gap: 7px;
+  margin-top: 13px;
+  flex-wrap: wrap;
+}
+
+.url-actions button {
+  border: none;
+  padding: 8px 11px;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.copy-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.edit-btn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.delete-btn {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.open-btn {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.url-actions button:hover {
+  opacity: 0.8;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  text-align: center;
+  padding: 35px 10px;
+  color: var(--muted);
+}
+
+.empty-state div {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 15px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+}
+
+.close-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #f3f4f6;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: #e5e7eb;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .topbar {
+    padding: 15px;
+  }
+
+  .topbar h1 {
+    font-size: 18px;
+  }
+
+  .topbar p {
+    font-size: 12px;
+  }
+
+  .logout-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .container {
+    padding: 18px 12px 40px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card strong {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 17px;
+    border-radius: 12px;
+  }
+
+  .list-header {
+    align-items: center;
+  }
+
+  .list-header h2 {
+    font-size: 17px;
+  }
+
+  .url-top {
+    flex-direction: column;
+  }
+
+  .url-actions button {
+    flex: 1;
+    min-width: 70px;
+  }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .login-card {
+    padding: 22px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .url-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
