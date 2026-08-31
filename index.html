@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+
+  <title>Short URL Manager</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- Login Screen -->
+    <section id="loginScreen" class="screen">
+      <div class="login-card">
+        <h1>🔐 Short URL</h1>
+        <p class="subtitle">Login to manage your links</p>
+
+        <form id="loginForm">
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter password"
+            autocomplete="current-password"
+            required
+          >
+
+          <button type="submit">Login</button>
+
+          <p id="loginError" class="error"></p>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- Main Dashboard -->
+    <section id="dashboardScreen" class="screen hidden">
+
+      <header class="topbar">
+        <div>
+          <h1>🔗 Short URL Manager</h1>
+          <p>Manage your short links</p>
+        </div>
+
+        <button id="logoutBtn" class="logout-btn">
+          Logout
+        </button>
+      </header>
+
+
+      <main class="container">
+
+        <!-- Statistics -->
+        <div class="stats">
+          <div class="stat-card">
+            <span>Total URLs</span>
+            <strong id="totalUrls">0</strong>
+          </div>
+
+          <div class="stat-card">
+            <span>Active URLs</span>
+            <strong id="activeUrls">0</strong>
+          </div>
+        </div>
+
+
+        <!-- Create URL -->
+        <div class="card">
+          <h2>Create Short URL</h2>
+
+          <form id="createForm">
+
+            <label for="longUrl">
+              Original URL
+            </label>
+
+            <input
+              type="url"
+              id="longUrl"
+              placeholder="https://example.com/your-long-url"
+              required
+            >
+
+
+            <label for="customCode">
+              Custom Short Code
+              <small>(optional)</small>
+            </label>
+
+            <input
+              type="text"
+              id="customCode"
+              placeholder="example"
+              maxlength="30"
+              autocomplete="off"
+            >
+
+
+            <button type="submit">
+              Create Short URL
+            </button>
+
+          </form>
+
+          <div id="createMessage" class="message"></div>
+        </div>
+
+
+        <!-- URL List -->
+        <div class="card">
+
+          <div class="list-header">
+            <h2>Your Short URLs</h2>
+
+            <button id="clearAllBtn" class="danger-btn">
+              Delete All
+            </button>
+          </div>
+
+          <div id="urlList" class="url-list">
+            <!-- URLs will be added by JavaScript -->
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <div>🔗</div>
+            <p>No short URLs created yet.</p>
+          </div>
+
+        </div>
+
+      </main>
+
+    </section>
+
+  </div>
+
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal hidden">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h2>Edit Short URL</h2>
+
+        <button id="closeModalBtn" class="close-btn">
+          ×
+        </button>
+      </div>
+
+
+      <form id="editForm">
+
+        <input type="hidden" id="editId">
+
+
+        <label for="editLongUrl">
+          Original URL
+        </label>
+
+        <input
+          type="url"
+          id="editLongUrl"
+          required
+        >
+
+
+        <label for="editCode">
+          Short Code
+        </label>
+
+        <input
+          type="text"
+          id="editCode"
+          maxlength="30"
+          required
+        >
+
+
+        <button type="submit">
+          Save Changes
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
+</body>
+</html>
